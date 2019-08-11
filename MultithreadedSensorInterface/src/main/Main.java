@@ -23,7 +23,7 @@ public class Main {
 		float sum = 0, average;
 		float count = 0;
 		while (true) {
-			try { Thread.sleep(1000);} catch(Exception ex) {}	// One second between sensor readings
+			try {Thread.sleep(1000);} catch(Exception ex) {}	// One second between sensor readings
 			float value = sensorReader.getValue();
 			sum += value;
 			count++;
