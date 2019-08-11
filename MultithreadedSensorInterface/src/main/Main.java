@@ -20,9 +20,15 @@ public class Main {
 		Sensor temperatureSensor = new Sensor(sensorReader);
 		temperatureSensor.start();	// Start the sensor thread
 		
+		float sum = 0, average;
+		float count = 0;
 		while (true) {
-			try { Thread.sleep(1000);} catch(Exception ex) {}
-			System.out.println("Sensor value = " + sensorReader.getValue());
+			try { Thread.sleep(1000);} catch(Exception ex) {}	// One second between sensor readings
+			float value = sensorReader.getValue();
+			sum += value;
+			count++;
+			average = sum / count;
+			System.out.println("Sensor value = " + value + ", average value = " + average);
 		}
 		
 	}
