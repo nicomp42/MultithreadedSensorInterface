@@ -12,12 +12,12 @@ import java.util.Random;
  */
 public class Sensor extends Thread {
 	private SensorInterface sensorInterface;
-	Random random;
 	public Sensor(SensorInterface sensorInterface) {
 		this.sensorInterface = sensorInterface;
-		random = new Random();
 	}
 	public void run() {
+		Random random;
+		random = new Random();
 		while (true) {
 			try { Thread.sleep(500);} catch(Exception ex) {}	// Analog sensors are slow so this is just a real-world pause to wait for settling.
 			// Here we would read the actual sensor but since we don't have one we will make up a random value
