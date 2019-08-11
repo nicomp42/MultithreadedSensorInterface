@@ -19,8 +19,8 @@ public class Main {
 		SensorReader sensorReader = new SensorReader();
 		Sensor temperatureSensor = new Sensor(sensorReader);
 		temperatureSensor.start();	// Start the sensor thread
-		
-		float sum = 0, average;
+
+		float sum = 0, average, max = Float.MIN_VALUE, min = Float.MAX_VALUE;
 		float count = 0;
 		while (true) {
 			try {Thread.sleep(1000);} catch(Exception ex) {}	// One second between sensor readings
@@ -28,7 +28,10 @@ public class Main {
 			sum += value;
 			count++;
 			average = sum / count;
-			System.out.println("Sensor value = " + value + ", average value = " + average);
+			if (min > value) {min = value;}
+			if (max < value) {max = value;}
+			
+			System.out.println("Sensor value = " + value + ", average value = " + average + " min = " + min + " max = " + max);
 		}
 	}
 }
