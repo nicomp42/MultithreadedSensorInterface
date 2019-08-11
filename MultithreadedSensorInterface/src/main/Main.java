@@ -5,6 +5,7 @@
 package main;
 
 import sensor.Sensor;
+import sensor.SensorReader;
 
 public class Main {
 

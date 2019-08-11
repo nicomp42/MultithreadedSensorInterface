@@ -2,9 +2,8 @@
  * Bill Nicholson
  * nicholdw@ucmail.uc.edu
  */
-package main;
+package sensor;
 
-import sensor.SensorInterface;
 /**
  * Read from the sensor. The callback method that the Sensor object uses is in here.
  * @author nicomp
