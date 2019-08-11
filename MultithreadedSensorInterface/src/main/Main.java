@@ -30,6 +30,5 @@ public class Main {
 			average = sum / count;
 			System.out.println("Sensor value = " + value + ", average value = " + average);
 		}
-		
 	}
 }
