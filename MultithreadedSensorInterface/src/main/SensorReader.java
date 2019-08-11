@@ -5,7 +5,11 @@
 package main;
 
 import sensor.SensorInterface;
-
+/**
+ * Read from the sensor. The callback method that the Sensor object uses is in here.
+ * @author nicomp
+ *
+ */
 public class SensorReader implements SensorInterface {
 	private float value;
 	@Override
