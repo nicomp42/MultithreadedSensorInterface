@@ -12,8 +12,10 @@ import java.util.Random;
  */
 public class Sensor extends Thread {
 	private SensorInterface sensorInterface;
-	public Sensor(SensorInterface sensorInterface) {
+	private String sensorName;
+	public Sensor(String sensorName, SensorInterface sensorInterface) {
 		this.sensorInterface = sensorInterface;
+		setSensorName(sensorName);
 	}
 	public void run() {
 		Random random;
@@ -24,4 +26,6 @@ public class Sensor extends Thread {
 			sensorInterface.update(random.nextFloat() * 100);
 		}
 	}
+	public String getSensorName() {return sensorName;}
+	public void setSensorName(String sensorName) {this.sensorName = sensorName;}
 }
